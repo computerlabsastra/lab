@@ -1,26 +1,26 @@
 //binomial theoram using c
-#include <stdio.h> <math.h>
-factorial (int z)
+factorial(int n)
 {
-    for (int y=1;y<=z;y++)
+    int product;
+    for (int i=1;i<=n;i++)
     {
-        
+        product *= i;
     }
+    return product;
 }
-comput(int a,b)
+comput(int x,int y)
 {
-
+    int comp;
+    comp = factorial(x)/factorial(x-y)*factorial(y);
+    return comp;    
 }
 main()
 {
-    int n,b=0;
-    printf("Hey , you're here to find binomial expansion using c.\nThe format is (x+y)^n.\nGive the values of n:");
-    scanf("%d",&n);
-    printf("Hence , the expansion is\n");
-    for (int i=0;i<=n;i++)
+    float n;
+    printf("The format is (a+b)^n.\nWhat is the n? ");
+    scanf("%f",&n);
+    for (int c=0;c<=n;c++)
     {
-        comput(n,i)=a[b];
-        b++;
-        printf("%d\n",a[b]);
+        printf("%fa^%fb^%d\n",comput(n,c),n-c,c);
     }
 }
